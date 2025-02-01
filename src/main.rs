@@ -1,14 +1,14 @@
-// src/main.rs
-use actix_web::web;
 use anyhow::Result;
-use std::sync::Arc;
-use crate::service::{UserService};
+use crate::service::initialize_service;
 use crate::web::run;
 
-#[actix_web::main]
+#[tokio::main]
 async fn main() -> Result<()> {
-    let service = Arc::new(UserService::new());
-    let state = crate::web::State { service };
-
-    run(state).await
+    // Initialize service with NATS support
+    let service = initialize_service().await?;
+    
+    // Run the web server with WebSocket and TLS support
+    run(service).await?;
+    
+    Ok(())
 }

@@ -1,3 +1,4 @@
+pub mod service;
 use serde::Deserialize;
 use uuid::Uuid;
 use chrono::{DateTime, Utc};

@@ -14,8 +14,9 @@ uuid = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
 anyhow = "1.0"
 tokio = { version = "1.0", features = ["full"] }
-nats = "0.4"
-tokio-tls = { version = "0.3", features = ["server"] }
-openssl = { version = "0.5", features = ["v111"] }
-websocket = { version = "0.15", default-features = false, features = ["openssl"] }
+nats = "0.25.0"
+tokio-tls = { version = "0.3.1", features = ["server"] }
+openssl = { version = "0.10.69", features = ["v111"] }
+#boringssl = { version = "", features = ["v111"]}
+websocket = { version = "0.27.1", default-features = false, features = ["openssl"] }
 
